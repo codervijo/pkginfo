@@ -45,6 +45,12 @@
 #           Given OPTION, what are the dependencies?
 #           Given OPTION, what is sequence of finding it in menuconfig
 
+# Another utility
+#           Package python script, all modules
+#           python binaries, and modules into one tarball
+#           such that it can be run in another older appliance kind of machine
+
+
 # Dependencies
 #    1, sys
 #    2, os
@@ -74,7 +80,7 @@ winfl    = 0
 lnxkrnl  = False
 pypkg    = False
 mkpkg    = False
-rorpkg    = False
+rorpkg   = False
 gnupkg   = False
 giturl   = ""
 testdir  = ""
