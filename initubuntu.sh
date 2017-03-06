@@ -2,31 +2,45 @@
 # Things I want in a ubuntu installation
 
 # Dev setup
-sudo apt install vim vim-gnome
+sudo apt install -y vim vim-gnome
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo apt-get update
-sudo apt-get install sublime-text-installer
-sudo apt install git gitk
-sudo apt install cscope
+sudo apt-get install -y sublime-text-installer
+sudo apt install -y git gitk
+sudo apt install -y cscope
 
 # Build Linux kernel
-sudo apt-get install libncurses5-dev gcc make git exuberant-ctags bc libssl-dev
+sudo apt-get install -y libncurses5-dev gcc make git exuberant-ctags bc libssl-dev
 
 # BATS - Bash Unit test framework, useful to learn new code
-sudo apt install bats
+sudo apt install -y bats
 
 # Gnu Dev setup
-sudo apt install autoconf automake
-sudo apt install autopoint texinfo flex
+sudo apt install -y autoconf automake
+sudo apt install -y autopoint texinfo flex
 
 # Environment setup
-sudo apt install dconf-editor
-sudo apt install chromium-browser
+sudo apt install -y dconf-editor
+sudo apt install -y chromium-browser
 # Note : Chromium comes without a PDF viewer by default.
 # There is a PDF.js implementation in HTML5, needs an extension.
+# Configure Chromium : To start from where you left off:
+# settings -> On startup -> Continue where you left off
+
+# Useful feature for any window manager is the ability to save sessions.
+# I want to start from where I left off in the last session.
+# There is no way to do that in Ubuntu's UI called unity.
+# This script gets around that problem
+sudo apt-get install -y perl x11-utils wmctrl xdotool
+wget http://raw.githubusercontent.com/hotice/webupd8/master/session -O /tmp/session
+sudo install /tmp/session /usr/local/bin/
+sudo chmod +x /usr/local/bin/session
 
 # Test setup
-sudo apt install screen
+sudo apt install -y screen
 
 # Python dev env
-sudo apt install python-pip python-dev build-essential
+sudo apt install -y python-pip python-dev build-essential
+
+# More dev setup
+sudo apt install -y docker.io
