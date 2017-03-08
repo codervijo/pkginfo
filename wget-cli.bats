@@ -24,12 +24,12 @@ setup() {
 
 @test "Check if wget binary is correct" {
     result="$(which wget)"
-    #[ "$result" == "/home/product/code/firmware/current/bin/gpio" ]
+    [ "$result" == "$WGETDIR/src/wget" ]
 }
 
 # no args
 @test "no arguments prints nothing" {
-    run wget
+    run $WGETDIR/src/wget
     [ "$status" -eq 1 ]
     [ "${lines[0]}" = "wget: missing URL" ]
 }
@@ -37,13 +37,13 @@ setup() {
 # help (2 different options)
 # usage info
 @test "-h prints usage info" {
-    run wget -h
+    run $WGETDIR/src/wget -h
     [ "$status" -eq 0 ]
     [[ "${lines[0]}" =~ "GNU Wget " ]]
 }
 
 @test "--help prints usage info" {
-    run wget --help
+    run $WGETDIR/src/wget --help
     [ "$status" -eq 0 ]
     [[ "${lines[0]}" =~ "GNU Wget " ]]
 }
@@ -59,7 +59,7 @@ setup() {
     [ -d "$WGETDIR" ]
     [ -f "$WGETDIR/doc/sample.wgetrc" ]
     cp -f $WGETDIR/doc/sample.wgetrc $HOME/.wgetrc
-    run wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
+    run $WGETDIR/src/wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
     [ "$status" -eq 0 ]
     if [ -f $HOME/wgetrc-GOOD ];
     then
@@ -76,7 +76,7 @@ setup() {
     [ -f "$WGETDIR/doc/sample.wgetrc" ]
     cp -f $WGETDIR/doc/sample.wgetrc $HOME/.wgetrc
     chmod ugo-r $HOME/.wgetrc
-    run wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
+    run $WGETDIR/src/wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
     [ "$status" -eq 0 ]
     if [ -f $HOME/wgetrc-GOOD ];
     then
@@ -88,7 +88,7 @@ setup() {
 @test "env var for user wgetrc location(readable, good)" {
     [ -d "$WGETDIR" ]
     [ -f "$WGETDIR/doc/sample.wgetrc" ]
-    WGETRC=$WGETDIR/doc/sample.wgetrc run wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
+    WGETRC=$WGETDIR/doc/sample.wgetrc run $WGETDIR/src/wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
     [ "$status" -eq 0 ]
 }
 
@@ -97,15 +97,14 @@ setup() {
     [ -f "$WGETDIR/doc/sample.wgetrc" ]
     cp $WGETDIR/doc/sample.wgetrc /tmp/samplewgetrc
     chmod ugo-r /tmp/samplewgetrc
-    WGETRC=/tmp/samplewgetrc run wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
+    WGETRC=/tmp/samplewgetrc run $WGETDIR/src/wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
     [ "$status" -eq 0 ]
 }
 
 @test "env var for user wgetrc location(no file, not good" {
-    WGETRC=/tmp/nosuch run wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
+    WGETRC=/tmp/nosuch run $WGETDIR/src/wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
     [ "$status" -eq 1 ]
     [ "${lines[0]}" = "wget: WGETRC points to /tmp/nosuch, which doesn't exist." ]
-
 }
 
 @test "env var for user wgetrc (in unreadable directory, not good)" {
@@ -114,7 +113,7 @@ setup() {
     mkdir -p /tmp/noentry
     cp $WGETDIR/doc/sample.wgetrc /tmp/noentry/wgetrc
     chmod ugo-rwx /tmp/noentry
-    WGETRC=/tmp/noentry/wgetrc run wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
+    WGETRC=/tmp/noentry/wgetrc run $WGETDIR/src/wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
     [ "$status" -eq 1 ]
     [ "${lines[0]}" = "wget:" ]
     chmod u+rwx /tmp/noentry
@@ -124,7 +123,7 @@ setup() {
 @test "env var for system wgetrc location(readable, good)" {
     [ -d "$WGETDIR" ]
     [ -f "$WGETDIR/doc/sample.wgetrc" ]
-    SYSTEM_WGETRC=$WGETDIR/doc/sample.wgetrc run wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
+    SYSTEM_WGETRC=$WGETDIR/doc/sample.wgetrc run $WGETDIR/src/wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
     [ "$status" -eq 0 ]
 }
 
@@ -133,12 +132,12 @@ setup() {
     [ -f "$WGETDIR/doc/sample.wgetrc" ]
     cp $WGETDIR/doc/sample.wgetrc /tmp/samplewgetrc
     chmod ugo-r /tmp/samplewgetrc
-    SYSTEM_WGETRC=/tmp/samplewgetrc run wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
+    SYSTEM_WGETRC=/tmp/samplewgetrc run $WGETDIR/src/wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
     [ "$status" -eq 0 ]
 }
 
 @test "env var for system wgetrc location(no file, not good" {
-    SYSTEM_WGETRC=/tmp/nosuch run wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
+    SYSTEM_WGETRC=/tmp/nosuch run $WGETDIR/src/wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
     [ "$status" -eq 0 ]
 }
 
@@ -148,16 +147,26 @@ setup() {
     mkdir -p /tmp/noentry
     cp $WGETDIR/doc/sample.wgetrc /tmp/noentry/wgetrc
     chmod ugo-rwx /tmp/noentry
-    SYSTEM_WGETRC=/tmp/noentry/wgetrc run wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
+    SYSTEM_WGETRC=/tmp/noentry/wgetrc run $WGETDIR/src/wget http://gnu.org -O /dev/null 1>/dev/null 2>&1
     [ "$status" -eq 0 ]
     chmod u+rwx /tmp/noentry
     rm -rf /tmp/entry
 }
 
+@test "--spider" {
+    [ -d "$WGETDIR" ]
+    run $WGETDIR/src/wget --spider http://www.example.com
+    [ "$status" -eq 0 ]
+    [ "${lines[7]}" = "but recursion is disabled -- not retrieving." ]
+}
+
+@test "--spider --recursive" {
+    [ -d "$WGETDIR" ]
+    run $WGETDIR/src/wget --spider --recursive http://www.example.com
+    [ "$status" -eq 0 ]
+}
+
 # Combination test cases
-# set heartbeatdon and get heartbeatstatus
-# set heartbeatdon and get status
-# set various options and get status
 
 @test "--badargs" {
     run wget --badargs
