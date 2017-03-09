@@ -50,6 +50,21 @@ setup() {
 
 # go through every option and test it out
 
+@test "simple wget (bug 44156)" {
+    rm -f index.html
+    run $WGETDIR/src/wget http://www.example.com
+    [ "$status" -eq 0 ]
+    [ -f index.html ]
+    rm -f index.html
+}
+
+@test "wget -O (bug 44156)" {
+    rm -f index.html
+    run $WGETDIR/src/wget -O- http://www.example.com 2>/tmp/stde5 1>/tmp/stdo5
+    [ "$status" -eq 0 ]
+    [ ! -f index.html ]
+}
+
 # Check various ways of wgetrc
 @test "readable \$HOME/.wgetrc" {
     if [ -f $HOME/.wgetrc ];
@@ -164,6 +179,89 @@ setup() {
     [ -d "$WGETDIR" ]
     run $WGETDIR/src/wget --spider --recursive http://www.example.com
     [ "$status" -eq 0 ]
+}
+
+@test "-Pprefix" {
+    [ -d "$WGETDIR" ]
+    rm -rf /tmp/ee1
+    rm -f index.html
+    run $WGETDIR/src/wget -P/tmp/ee1 http://www.example.com
+    [ "$status" -eq 0 ]
+    [ ! -f index.html ]
+    [ -d /tmp/ee1 ]
+    [ -f /tmp/ee1/index.html ]
+}
+
+# Output to stdout, and logs in stderr
+@test "-O/tmp/stdo6" {
+    [ -d "$WGETDIR" ]
+    rm -f /tmp/stdo6 /tmp/stdo61
+    rm -f /tmp/stde6
+    rm -f index.html
+    $WGETDIR/src/wget -O/tmp/stdo6 http://www.example.com 1>/tmp/stdo61 2>/tmp/stde6
+    [ "$?" -eq 0 ]
+    [ ! -f index.html ]
+    [ ! -f "-" ]
+    [ -f /tmp/stdo6 ]
+    [ -f /tmp/stde6 ]
+    stdsize=$(wc -l /tmp/stdo6  | cut -f1 -d' ')
+    outsize=$(wc -l /tmp/stdo61 | cut -f1 -d' ')
+    errsize=$(wc -l /tmp/stde6  | cut -f1 -d' ')
+    [ $stdsize -eq 50 ]
+    [ $outsize -eq  0 ]
+    [ $errsize -eq 11 ]
+}
+@test "-O-" {
+    [ -d "$WGETDIR" ]
+    rm -f /tmp/stdo1
+    rm -f /tmp/stde1
+    rm -f index.html
+    $WGETDIR/src/wget -O- http://www.example.com 1>/tmp/stdo1 2>/tmp/stde1
+    [ "$?" -eq 0 ]
+    [ ! -f index.html ]
+    [ ! -f "-" ]
+    [ -f /tmp/stdo1 ]
+    [ -f /tmp/stde1 ]
+    outsize=$(wc -l /tmp/stdo1 | cut -f1 -d' ')
+    errsize=$(wc -l /tmp/stde1 | cut -f1 -d' ')
+    [ $outsize -eq 50 ]
+    [ $errsize -eq 11 ]
+}
+
+# Logs to stdout, but output to index.html
+@test "-o/tmp/stdo7" {
+    [ -d "$WGETDIR" ]
+    rm -f /tmp/stdo7 /tmp/stdo71
+    rm -f /tmp/stde7
+    rm -f index.html
+    $WGETDIR/src/wget -o/tmp/stdo7 http://www.example.com 1>/tmp/stdo71 2>/tmp/stde7
+    [ "$?" -eq 0 ]
+    [ -f index.html ]
+    [ ! -f "-" ]
+    [ -f /tmp/stdo7 ]
+    [ -f /tmp/stde7 ]
+    stdsize=$(wc -l /tmp/stdo71 | cut -f1 -d' ')
+    outsize=$(wc -l /tmp/stdo7  | cut -f1 -d' ')
+    errsize=$(wc -l /tmp/stde7  | cut -f1 -d' ')
+    [ $stdsize -eq  0 ]
+    [ $outsize -eq 12 ]
+    [ $errsize -eq  0 ]
+}
+@test "-o-" {
+    [ -d "$WGETDIR" ]
+    rm -f /tmp/stdo2
+    rm -f /tmp/stde2
+    rm -f index.html
+    $WGETDIR/src/wget -o- http://www.example.com 1>/tmp/stdo2 2>/tmp/stde2
+    [ "$?" -eq 0 ]
+    [ -f index.html ]
+    [ ! -f "-" ]
+    [ -f /tmp/stdo2 ]
+    [ -f /tmp/stde2 ]
+    outsize=$(wc -l /tmp/stdo2 | cut -f1 -d' ')
+    errsize=$(wc -l /tmp/stde2 | cut -f1 -d' ')
+    [ $outsize -eq 12 ]
+    [ $errsize -eq 0 ]
 }
 
 # Combination test cases
