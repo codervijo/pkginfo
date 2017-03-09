@@ -50,6 +50,11 @@
 #           python binaries, and modules into one tarball
 #           such that it can be run in another older appliance kind of machine
 
+# Another utility
+#           To show GUI display of all USB connected devices
+
+# Another utility
+#           To show all kernel modules, and its info and parameters (CLI and UI)
 
 # Dependencies
 #    1, sys
@@ -62,7 +67,11 @@ if len(sys.argv) != 2:
 	print 'Accepting 1 argument : path to package to peek into'
         sys.exit(1)
 
-topdir = sys.argv[1]
+# Configuration
+debug    = False
+
+# Init variables
+topdir   = sys.argv[1]
 subdirs  = 0
 cfiles   = 0
 cppfiles = 0
@@ -89,7 +98,8 @@ for dirname, subdirList, fileList in os.walk(topdir):
         # ignore hidden directories (.blah)
         if os.path.basename(dirname).startswith('.'):
 		next
-	print 'Found directory: %s subdirList %s' % (dirname, subdirList)
+	if debug is True:
+		print 'Found directory: %s subdirList %s' % (dirname, subdirList)
 	if dirname.lower().endswith('/.git'):
 		next
         if dirname.lower().endswith('/test') or dirname.lower().endswith('/tests') or dirname.lower().endswith('/testenv'):
@@ -127,7 +137,7 @@ for dirname, subdirList, fileList in os.walk(topdir):
                         elif fname.lower().endswith('.txt'):
 				txtfiles  += 1
 			else:
-                                # print "Unknown file", fname
+				# print "Unknown file", fname
 				unfiles   += 1
 			# If there is a setup.py, its likely a python package
 			if fname.lower() == 'setup.py':
@@ -163,9 +173,13 @@ else:
 
 # Analyse - what kind of package is it?
 # If it has just python files and 0 c/java/perl files, python package
-if os.path.exists(topdir + '/setup.py'):
-	if pyfiles > 0 and cfiles == 0:
-		pypkg = True
+if pypkg is True:
+	pypkg = False
+	if os.path.exists(topdir + '/setup.py'):
+		print 'Found setup.py in ', topdir
+		if pyfiles > 0 and cfiles == 0:
+			print 'pypkg is going true'
+			pypkg = True
 # If it is mostly C (likely in src/), and Makefiles/configure  C package
 # TODO needs to be improved, this is stopgap
 if cfiles > pyfiles:
@@ -181,12 +195,11 @@ if os.path.exists(topdir + '/Readme'):
 			lnxknrl = False
 		break
 # Version of kernel is output of 'make kernelversion'
-
 # Print Report
 if giturl is not "":
 	print 'Package GIT repo : ', giturl
 if mkpkg is True:
-	print 'Makfile based pakage'
+	print 'Makefile based pakage'
 if gnupkg is True:
 	print 'GNU (autotools) based package'
 if rorpkg is True:
@@ -200,11 +213,11 @@ if exdir:
 	print 'Example(s) are in', exdir
 
 if pypkg is True:
-	print 'Python package'
+	print 'Python package', pypkg
 if mkpkg is True:
-	print 'Makefile based C/C++ package'
+	print 'Makefile based C/C++ package' # FIXME
 
-print '\n\n'
+print '\n'
 print '%5d C files'       % cfiles
 print '%5d C++ files'     % cppfiles
 print '%5d Python files'  % pyfiles
