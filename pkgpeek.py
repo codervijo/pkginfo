@@ -12,6 +12,7 @@
 #                      7, Test directory                    DONE
 #                      8, Examples directory                DONE
 #                      9, Is it kernel source? Which ver?
+#                     10, "Show make options" (make help)
 #           V1        10, No of lines of C code in files
 #           V1        11, Dependency libraries
 #           V1        12, build instructions
