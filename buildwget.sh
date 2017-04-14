@@ -11,6 +11,8 @@ sudo apt install -y autopoint texinfo flex
 sudo apt install -y gperf
 sudo apt install -y gnutls
 sudo apt install -y libssl-dev
+# For Wget2
+sudo apt install -y libtool
 # # To build docs
 sudo apt-get install -y texlive
 

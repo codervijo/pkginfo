@@ -38,9 +38,14 @@ sudo chmod +x /usr/local/bin/session
 
 # Test setup
 sudo apt install -y screen
+sudo apt install -y tree
 
 # Python dev env
 sudo apt install -y python-pip python-dev build-essential
 
 # More dev setup
 sudo apt install -y docker.io
+
+# Perl development
+sudo apt install perl-doc
+sudo apt install cpanminus perlbrew
