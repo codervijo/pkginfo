@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Things to do to build wget - some of it is one time setup
-WGETDIR=${WGETDIR:=$1}
+WGETDIR=${WGETDIR:=$PWD}
 # TODO check if it is Linux. Build from source works best in Linux
 echo "Starting wget build from $WGETDIR"
 
+# TODO apt install only if it is first time
 # If it is first time build on this set up/docker/Ubuntu installation
 sudo apt install -y autoconf automake
 sudo apt install -y autopoint texinfo flex
@@ -47,7 +48,8 @@ fi
 
 # If it all passed, try tests
 (cd $WGETDIR && make check)
-
+(cd $WGETDIR && make check -j4)
+(cd $WGETDIR && make syntax-check) # Check exit code
 
 # TODO Check if $WGETDIR/src/wget was made.
 

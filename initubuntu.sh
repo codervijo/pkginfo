@@ -49,8 +49,12 @@ sudo apt install -y docker.io
 # Perl development
 sudo apt install perl-doc
 sudo apt install cpanminus perlbrew
+
 # For AVR development on linux
 sudo apt-get install gcc-avr binutils-avr avr-libc
 sudo apt-get install gdb-avr
 sudo apt-get install avrdude
 
+
+# Lua development
+sudo apt install lua5.2

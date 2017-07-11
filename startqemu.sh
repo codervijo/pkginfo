@@ -5,6 +5,7 @@
 sudo apt-get install -y qemu-kvm qemu virt-manager 
 sudo apt-get install -y virt-viewer libvirt-bin
 
+# TODO : Add a way to boot from live USB as well
 PKGS=${HOME}/pkgs/
 IMGFILE=${PKGS}/ubuntu.img
 QCOWFILE=${PKGS}/ubuntu.qcow

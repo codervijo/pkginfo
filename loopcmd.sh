@@ -1,6 +1,9 @@
  #!/bin/bash
- # TODO take this as argument
- MAXCOUNT=5
+
+ # Usage : set MAXCOUNT env variable
+ # Or use first argument for MAXCOUNT
+
+ MAXCOUNT=${MAXCOUNT:=$1}
  i=0
  # TODO add option to suppress message from command
  while [ $i -lt $MAXCOUNT ]; do
