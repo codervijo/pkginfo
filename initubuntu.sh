@@ -58,3 +58,8 @@ sudo apt-get install avrdude
 
 # Lua development
 sudo apt install lua5.2
+
+
+# Set up Time on Ubuntu
+ntpdate ntp.ubuntu.com
+
