@@ -32,7 +32,8 @@ then
 		echo "Failed to compress files";
 		exit -1;
 	fi
-	/bin/cat ${TMPDIR}/mt.tar.gz>>${TMPDIR}/installscript.sh
+	/usr/bin/xxd ${TMPDIR}/mt.tar.gz >${TMPDIR}/mt.encoded
+	/bin/cat ${TMPDIR}/amt.tar.gz>>${TMPDIR}/installscript.sh
         cp ${TMPDIR}/installscript.sh ${PWD}
 fi
  
@@ -42,7 +43,8 @@ then
         # TODO check if operations are permitted
 	TMPDIR=`/bin/mktemp -d /tmp/selfextract.XXXXXX`
 	ARCHIVE=`/usr/bin/awk '/^__INSTALLER_BELOW__/ {print NR + 2; exit 0; }' $0`
-	/usr/bin/tail -n+${ARCHIVE} $0 | /bin/cat >${TMPDIR}/narch.tar.gz
+	/usr/bin/tail -n+${ARCHIVE} $0 | /bin/cat >${TMPDIR}/narch.encoded
+        (cd ${TMPDIR} && /usr/bin/xxd -r narch.encoded narch.tar.gz)
 	(cd ${TMPDIR} && tar zxf narch.tar.gz -C . --strip-components=5)
 	#(cd ${TMPDIR} &
         # Next move files
