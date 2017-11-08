@@ -59,6 +59,14 @@ sudo apt-get install avrdude
 # Lua development
 sudo apt install lua5.2
 
+# NodeJS development
+sudo apt install NodeJS
+sudo apt install npmq
+
+# Shell related
+sudo apt install expect
+# autoexpect creates expect scripts
+sudo apt install expect-dev
 
 # Set up Time on Ubuntu
 ntpdate ntp.ubuntu.com
