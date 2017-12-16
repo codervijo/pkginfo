@@ -1,0 +1,19 @@
+
+CentOS uses dracut(8) to create, manage initramdisk
+
+Very useful documentation:
+https://www.kernel.org/pub/linux/utils/boot/dracut/dracut.html
+
+1, To create new initramfs
+   dracut <image name> $(uname -r)
+   Note: instead of $(uname -r) you can specify another kernel version
+2, you can add kernel drivers to this list.
+3, Adding "rd.shell" to kernel commandline will drop you into the dracut shell
+4, PROBLEM : dracut shell sometimes doesn't take input
+
+References
+----------
+1, https://dracut.wiki.kernel.org/index.php/Main_Page
+2, https://www.ibm.com/developerworks/library/l-initrd/index.html
+3, http://people.redhat.com/harald/dracut.html#stages
+4, https://git.kernel.org/pub/scm/boot/dracut/dracut.git/log/?qt=grep&q=

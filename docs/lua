@@ -1,0 +1,17 @@
+One interesting thing to note, is that lua and other scripting languages
+can't always use many performance enhancing syscalls.
+eg. mmap which returns an address.
+since lua,perl etc doesn't deal with addresses, they can't really use it.
+
+Specialities
+ 1, no "continue", next or last
+ 2, no switch-case
+ 3, multiple arguments to functions can be dangerous 
+ 4, functions are first class citizen (can be assigned to variables etc)
+ 5, table is the main DS.
+ 6, You can use table to implement array
+ 7, arrays can be sparse, in which case #array doesn't makes sense.
+ 8, pairs() , ipairs() lets you iterate over tables and arrays respectively
+ 9, ifelse is "if () then ... elseif ... end"
+10, No switch statement. Alternative  is here :
+    http://lua-users.org/wiki/SwitchStatement

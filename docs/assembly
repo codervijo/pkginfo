@@ -1,0 +1,18 @@
+1, Assembly syntax when you read various documents:
+    there are AT&T syntax and Intel syntax.
+   In Intel documents, it is usually in Intel syntax.
+   With GNU tool chains, the default syntax used is usually the AT&T one.
+2, The most significant different between these 2 syntaxes is that
+   AT&T and Intel syntax use the opposite order for 
+   source and destination operands.
+   Intel syntax uses "dest, source" while the AT&T syntax uses "source, dest". 
+3, For the representation of operands with the SIB or displacement,
+   the formats are different. 
+   For example, the Intel syntax is [rdi+0xa] for 0xa(%rdi) in AT&T syntax.
+   For a list of notable differences,
+   please check AT&T Syntax versus Intel Syntax : 
+   https://www.sourceware.org/binutils/docs-2.12/as.info/i386-Syntax.html
+
+4, https://www.systutorials.com/72643/beginners-guide-x86-64-instruction-encoding/
+5, https://www.systutorials.com/3024/x86-64-isa-assembly-references/
+6,https://software.intel.com/sites/default/files/managed/39/c5/325462-sdm-vol-1-2abcd-3abcd.pdf

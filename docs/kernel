@@ -1,0 +1,46 @@
+1, Virtualization, Memory density
+   https://www.kernel.org/doc/ols/2009/ols2009-pages-19-28.pdf
+2, Research OS: Sun, by many OS-heavyweights
+   https://en.wikipedia.org/wiki/Spring_(operating_system)
+
+3, Timers
+   https://en.wikipedia.org/wiki/High_Precision_Event_Timer
+   HPET is meatn to supplement and replace 8254 programmable interval timer and 
+   RTC's period interrupt. HPET has higher frequency and wider 64bit counters.
+   Linux kernels prior to 2.6 cannot use HPET
+   Linux kernel can use HPET as its clock source, but TSC is preferred.
+   TSC is much lower overhead(WHY?)
+   HPET is a continuously running timer that counts upward,
+   not a one-shot device that counts down to zero,
+                                          causes one interrupt and then stops.
+   The HPET is programmed via a memory mapped I/O window that is discoverable 
+   via Advanced Configuration and Power Interface (ACPI).  
+   The HPET circuit in modern PCs is integrated into the southbridge chip.
+
+   programmable interval timer (PIT)
+   real-time clock (RTC)
+   Time Stamp Counter (TSC)  
+   Power Management Timer (PMTIMER)
+
+   https://en.wikipedia.org/wiki/Time_Stamp_Counter
+   The Time Stamp Counter (TSC) is a 64-bit register present on all 
+   x86 processors since the Pentium. It counts the number of cycles since reset.
+   The instruction RDTSC returns the TSC in EDX:EAX. In x86-64 mode, 
+   RDTSC also clears the higher 32 bits of RAX and RDX. Its opcode is 0F 31
+
+   The Time Stamp Counter was once an excellent high-resolution, low-overhead 
+   way for a program to get CPU timing information. With the advent of 
+   multi-core/hyper-threaded CPUs, systems with multiple CPUs, and hibernating 
+   operating systems, the TSC cannot be relied upon to provide accurate results
+   — unless great care is taken to correct the possible flaws: rate of tick and
+   whether all cores (processors) have identical values in their time-keeping 
+   registers. There is no promise that the timestamp counters of multiple CPUs 
+   on a single motherboard will be synchronized. 
+
+4, TCP Implementation in Linux
+   http://www.ece.virginia.edu/cheetah/documents/papers/TCPlinux.pdf
+   http://events.linuxfoundation.org/sites/events/files/slides/pushing-kernel-networking.pdf
+
+5, Virtualization
+   https://bellard.org/jslinux/
+   Lots of emulators : https://bellard.org/

@@ -1,0 +1,36 @@
+Kexec + Kdump
+=============
+
+What is it?
+    Kexec enables booting into a new kernel while
+    preserving the memory contents in a crash sce-
+    nario,  and kdump uses this feature to capture
+    the kernel crash dump
+
+So you can :
+    1, Boot into same kernel again without going through BIOS (fast reboot)
+    2, Boot into small capture kernel and get dumps after a crash/panic
+    3, Provide a way to quickly provide user space with "fresh slate",
+       assuming it is only a software issue and not hardware problem.
+    4,
+
+HowTo
+    1, Build kernel with kexec support
+    2, Also add CONFIG_RELOCATABLE=y to kernel config
+    3, change grub config/kernel cmdline with addition "crashkernel=256"
+    4, install kexec-utils
+    5, kexec -u
+    6, kexec -l <params>
+    7, kexec -e
+
+Next steps :
+DONE 1, Build kernels for kexec
+DONE 2, Try it on a plat 5 device or centos 7 device
+     3, Try kexec and kdump on one device
+     4, 
+
+References:
+    1, http://lse.sourceforge.net/kdump/documentation/ols2oo5-kdump-paper.pdf
+    2, http://lse.sourceforge.net/kdump/
+    3, https://en.wikipedia.org/wiki/Kexec
+    4, https://serverfault.com/questions/620225/how-to-properly-use-kexec-with-systemd-on-centos-7

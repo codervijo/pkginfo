@@ -1,0 +1,14 @@
+Debugging Memory issues
+
+Techniques :
+    1, export MEMORY_CHECK_=3 and run the program (Set it to 0 to disable)
+    2, dmalloc, electricfence or valgrind
+    3, build and run with -fsanitize=undefined -fsanitize=address
+    4, 
+
+References
+    1, https://www.computerworld.com/article/3003957/linux/review-5-memory-debuggers-for-linux-coding.html
+    2, https://developers.redhat.com/blog/2014/10/16/gcc-undefined-behavior-sanitizer-ubsan/
+    3, https://en.wikibooks.org/wiki/Linux_Applications_Debugging_Techniques/Heap_corruption
+    4, http://www.linuxjournal.com/article/4681?page=0,1
+    5, http://valgrind.org/

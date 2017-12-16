@@ -1,0 +1,87 @@
+Fork, clone etc
+
+
+Exiting from child process
+--------------------------
+The C library function exit() calls the kernel system call _exit() internally.
+The kernel system call _exit() will cause the kernel to close descriptors,
+free memory, and perform the kernel terminating process clean-up.
+The C library function exit() call will flush I/O buffers and perform aditional
+clean-up before calling _exit() internally. The function exit(status) causes
+the executable to return "status" as the return code for main().
+When exit(status) is called by a child process, it allows the parent process to
+examine the terminating status of the child (if it terminates first).
+Without this call (or a call from main() to return()) and specifying the
+status argument, the process will not return a value. 
+
+_exit() is preferred to exit() to exit from a child process. (TOFIND VIJO)
+It seems like exit() is too heavy and may clean up way too many things if we
+want parent to continue.
+
+
+
+
+IPC
+===
+  1, Modern mechanisms : mmap() and memfd
+  2, Mmap : https://linux.die.net/man/2/mmap
+  3, http://pubs.opengroup.org/onlinepubs/009695399/functions/mmap.html
+  4, http://beej.us/guide/bgipc/output/html/multipage/mmap.html
+  5, Older mechansim : 
+              SHM : http://users.cs.cf.ac.uk/Dave.Marshall/C/node27.html
+  6, To mmap, open() file with O_RDWR (O_RDONLY or O_WRONLY will not work)
+  7, https://lwn.net/Articles/591108/
+  8, NO KEY SHOULD BE HIGHER THAN 0x80000000!!! NOT DOCUMENTED. WILL TRIP YOU.
+  9, The above point 8 may have to do max allowed keys on the system, not sure.
+
+  Semaphore:
+  ---------
+    1, 2 types Sys V semaphore and POSIX semaphore.
+    2, POSIX semaphores are easier to use, with a better API, used with pthreads
+    3, A semaphore has a value
+    4, You can increase the value (foo.sem_op > 0) This is non-blocking
+    5, You can decrease the value (foo.sem_op < 0) This may block
+    6, You can wait for it to be 0
+    7, When you decrease the semaphore value, it will not block if resulting
+       value from the decrement will not be negative. Otherwise it will block
+       until semaphore's value is large enough that decreasing it wont make it
+       negative anymore.
+    8, So, we have  Lock Mutex : decrease semaphore by -1
+                  Unlock Mutex : increase semaphore by +1
+    9, http://beej.us/guide/bgipc/output/html/singlepage/bgipc.html#semaphores
+   10, if locking is done with SEM_UNDO, unlock() should also be done with
+       SEM_UNDO. Otherwise it will fail after 32767 operations. Not in Docs.
+       ref: http://compgroups.net/comp.unix.programmer/semop-with-sem_undo-fails-after-32767-ca/456488
+   11, Tuning kernel limits for IPC
+       https://www.ibm.com/support/knowledgecenter/SSEPGG_10.5.0/com.ibm.db2.luw.qb.server.doc/doc/t0008238.html
+
+  Shared Memory:
+  -------------
+    1, There seems to be Sys V and Posix versions of shm as well.
+    2, Linux shared memory is backed by /dev/shm
+       https://superuser.com/questions/45342/when-should-i-use-dev-shm-and-when-should-i-use-tmp
+       From wikipedia:
+       Recent 2.6 Linux kernel builds have started to offer /dev/shm as shared 
+       memory in the form of a ramdisk, more specifically as a world-writable 
+       directory that is stored in memory with a defined limit in 
+       /etc/default/tmpfs.  /dev/shm support is completely optional within the 
+       kernel config file.  It is included by default in both Fedora and 
+       Ubuntu distributions, where it is most extensively used by the 
+       Pulseaudio application. 
+      http://wiki.deimos.fr/images/1/1e/Solaris_tmpfs.pdf
+
+      https://www.kernel.org/doc/gorman/html/understand/understand015.html
+
+  Debugging/Testing:
+  -----------------
+    1, Using expect to test/automate interactive programs:
+       http://ws680.nist.gov/publication/get_pdf.cfm?pub_id=821307
+    2, Use expect-dev or autoexpect to create expect script from your
+       command history.
+       apt-get install expect-dev
+
+
+References
+    1, http://man7.org/conf/lca2013/IPC_Overview-LCA-2013-printable.pdf
+    2, http://pages.cs.wisc.edu/~remzi/Classes/537/Fall2008/Notes/threads-semaphores.txt
+    3, http://www.cs.utexas.edu/users/EWD/ewd13xx/EWD1303.PDF

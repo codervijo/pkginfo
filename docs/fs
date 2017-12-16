@@ -1,0 +1,24 @@
+Filesystems in Linux
+
+Read Directory information : 
+  1, opendir
+  2, readdir
+  3, closedir
+  4, Directory entry or dirent: http://nxmnpg.lemoda.net/5/dirent
+
+Walking down the directory tree :
+  1, https://www.gnu.org/software/libc/manual/html_node/Working-with-Directory-Trees.html#Working-with-Directory-Trees
+  2, https://www.lemoda.net/c/recursive-directory/index.html
+
+
+Locking file
+  1, https://gavv.github.io/blog/file-locks/
+  2, flock for advisory locking
+  3, fcntl(), lockf() can also lock - more POSIX
+  4, File locks apply to the actual file, rather than the file name.
+     This is important since Unix allows multiple names to refer to
+     the same file. 
+  5, All fcntl locks associated with a file for a given process are
+     removed when any file descriptor for that file is closed by that
+     process, even if a lock was never requested for that file descriptor
+ 

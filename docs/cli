@@ -1,0 +1,23 @@
+Writing command line unix programs
+==================================
+  1, Most important tool : getopt and friends (on most platforms)
+  2, second : readline
+
+ 
+Readline
+--------
+  http://www.delorie.com/gnu/docs/readline/rlman_toc.html
+  Command completions : http://www.delorie.com/gnu/docs/readline/rlman_44.html
+  rl_complete() calls rl_completion_matches() to generate list of possible
+  completions. 
+
+  For completion example, look at unix snippet fileman.c
+
+
+Terminal control
+----------------
+  1, https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux#5947802
+  2, Command : tput
+  3, man 1 tput; man 5 terminfo;
+  4, http://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h2-PC-Style-Function-Keys
+  5, https://stackoverflow.com/questions/39969495/binding-to-arrow-keys-in-readline-library?rq=1

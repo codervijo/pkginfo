@@ -1,0 +1,16 @@
+New Useful Linux commands 
+-------------------------
+   + New to me
+   + nl(1) for line number
+   + watch "CMD" for changes in output of CMD
+   + mtr google.com for *nice* traceroute
+   + find . -exec echo {} \+ for printing files in one line
+   + yes "hello" to print "hello" ad inifinitum
+   + inotifywait : to be notified when a file is modified
+   + cat file.txt | xclip -selection clipboard : copy to clipboard
+   + apt-file search dir/file.h : find packages with file in Ubuntu
+   + screen or tmux to start programs when you leave SSH
+   + rescan SCSI bus : echo "- - -" > /sys/class/scsi_host/hostX/scan
+   + enable extra kernel debug:
+     mount -t debugfs none /sys/kernel/debug
+     eg. echo "1">/sys/kernel/debug/tracing/events/libata/enable

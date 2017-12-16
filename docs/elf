@@ -1,0 +1,43 @@
+ELF files, Linker, Loader
+
+Objective of this note: - to include DWARF, ELF details, binary formats,
+objdump, binary debug info, dlopen(), linking, vdso, .so, static linking,
+dynamic linking etc. etc.
+
+
+   ELF - executable and linking format (ELF) 
+   DWARF - (Debug With Arbitrary Record Format) format 
+
+   vDSO
+   ====
+   The  "vDSO"  (virtual  dynamic shared object) is a small shared library
+   that the kernel automatically maps into the address space of all  user-
+   space  applications.
+
+   Why does the vDSO exist at all?  There are some system calls thIe kernel
+   provides that user-space code ends up using frequently,  to  the  point
+   that  such calls can dominate overall performance.  This is due both to
+   the frequency of the call as well as the context-switch  overhead  that
+   results from exiting user space and entering the kernel.
+
+   Source
+       When you compile the kernel, it will automatically compile and link the
+       vDSO code for you.  You will frequently find it under the architecture-
+       specific directory:
+           find arch/$ARCH/ -name '*vdso*.so*' -o -name '*gate*.so*'
+
+    Debugging
+    ---------
+    Performance analysis : http://www.brendangregg.com/flamegraphs.html
+
+References
+   1, https://docs.oracle.com/cd/E53394_01/html/E54813/index.html
+   2, man 7 vdso
+   3, http://www.skyfree.org/linux/references/ELF_Format.pdf
+   4, https://en.wikipedia.org/wiki/Executable_and_Linkable_Format
+   5, Creating small ELF binary :
+      http://www.muppetlabs.com/~breadbox/software/tiny/teensy.html
+   6, intro Linux Journal article :
+      http://www.linuxjournal.com/ node/1060/print
+   7, Ulrich Drepper's site:
+      https://www.akkadia.org/drepper/

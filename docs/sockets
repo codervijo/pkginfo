@@ -1,0 +1,67 @@
+Sockets
+=======
+  AF_foo means address family foo, and PF_foo means protocol family foo.
+  In Linux, they are always been the same values, I believe.
+
+  Traditionally, the PF_foo constants were used for socket(),
+  but AF_foo in the struct sockaddr structure.
+
+
+Raw sockets
+===========
+  Why?
+  ---
+    1, https://en.wikipedia.org/wiki/Raw_socket
+    2, Used in security realted apps like nmap, icmp ping, routing protocols(igmp)
+    3, bypass tcp/ip processing.
+    4, re-implement new transport layer protocols.
+    5, bypass routing : Proof most new routing protocols and even things like
+       IGMP are implemented using raw sockets per wiki page.
+
+  How?
+  ---
+    1, socket (AF_INET, SOCK_RAW, IPPROTO_RAW)
+       setsockopt (sd, IPPROTO_IP, IP_HDRINCL, &on, sizeof (on))
+       setsockopt (sd, SOL_SOCKET, SO_BINDTODEVICE, &ifr, sizeof (ifr))
+       sendto (sd, packet, IP4_HDRLEN + UDP_HDRLEN + datalen, 0, (struct sockaddr *) &sin, sizeof (struct sockaddr))
+    2, UDP checksum calculation uses IP address etc. Pseudo-header checksum
+       https://stackoverflow.com/questions/1480580/udp-checksum-calculation
+    3, Sending Arbitary IP data gram :
+       http://www.microhowto.info/howto/send_an_arbitrary_ipv4_datagram_using_a_raw_socket_in_c.html
+    4, Sending Arbitary ethernet frame :
+       http://www.microhowto.info/howto/send_an_arbitrary_ethernet_frame_using_an_af_packet_socket_in_c.html
+    5, Raw ethernet using sockaddr_ll :
+       https://stackoverflow.com/questions/19816071/raw-ethernet-sockets-filling-sockaddr-ll
+
+
+
+Notes:
+   1, To find MAC address of ethernet interface
+      http://www.microhowto.info/howto/get_the_mac_address_of_an_ethernet_interface_in_c_using_siocgifhwaddr.html
+   2,  ETH_P_IP only listens for incoming IP packets.
+   3, Raw socket recv() will packets from all devices by default, so restrict it
+      to just one interface, call bind(2) to bind an interface to socket.
+   4, struct sockaddr is one of the most important structures in dealing
+      with all things socket, and network programming. More details in ref (S6)
+   5, BIG SURPRISE HERE  : Let us say you have a raw socket open and then
+      you added IP on the underlying device, and starts communicating TCP
+      or UDP. In this case, TCP/UDP socket will go to the application
+      reading that socket, and same packets will also make it to raw socket.
+      Very annoying to deal with : I just closed the raw socket when TCP/UDP
+      socket communication is going on and vice versa.
+
+References
+----------
+   Raw Sockets:
+      R1, http://opensourcefosru.com/2015/03/a-guide-to-using-raw-sockets/
+      R2, Pocket guide for IP, TCP, UDP headers, state machine etc
+           https://www.cs.nmt.edu/~risk/TCP-UDP%20Pocket%20Guide.pdf
+      R3, http://www.binarytides.com/raw-sockets-c-code-linux/
+      R4, http://www.pdbuchan.com/rawsock/rawsock.html : BEST RESOURCE
+      R5, http://sock-raw.org/papers/sock_raw
+   Sockets
+      S6, http://www.cas.mcmaster.ca/~qiao/courses/cs3mh3/tutorials/socket.html
+      S7, 
+   Linux Kernel
+      LK1, http://www.ece.virginia.edu/cheetah/documents/papers/TCPlinux.pdf
+      LK2, http://events.linuxfoundation.org/sites/events/files/slides/pushing-kernel-networking.pdf
