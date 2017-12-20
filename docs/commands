@@ -14,3 +14,6 @@ New Useful Linux commands
    + enable extra kernel debug:
      mount -t debugfs none /sys/kernel/debug
      eg. echo "1">/sys/kernel/debug/tracing/events/libata/enable
+   + Crash kernel:
+     echo 1>/proc/sys/kernel/sysrq
+     echo c>/proc/sysrq-trigger
