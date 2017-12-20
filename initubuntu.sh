@@ -39,6 +39,7 @@ sudo chmod +x /usr/local/bin/session
 # Test setup
 sudo apt install -y screen
 sudo apt install -y tree
+sudo apt install -y dos2unix
 
 # Python dev env
 sudo apt install -y python-pip python-dev build-essential
@@ -71,3 +72,8 @@ sudo apt install expect-dev
 # Set up Time on Ubuntu
 ntpdate ntp.ubuntu.com
 
+#Golang
+sudo apt install golang
+mkdir ${HOME}/golang
+export GOPATH=${HOME}/golang
+echo "export PATH=\$PATH:\$(go env GOPATH)/bin">>${HOME}.bashrc
