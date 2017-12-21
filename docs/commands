@@ -17,3 +17,7 @@ New Useful Linux commands
    + Crash kernel:
      echo 1>/proc/sys/kernel/sysrq
      echo c>/proc/sysrq-trigger
+   + View various YUM package versions:
+     yum --showduplicates list httpd
+   + To reload udev rules
+     udevadm control --reload-rules && udevadm trigger
