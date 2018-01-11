@@ -44,3 +44,9 @@
 5, Virtualization
    https://bellard.org/jslinux/
    Lots of emulators : https://bellard.org/
+
+6, To debug, tools :
+    i, https://linux.die.net/man/8/crash
+   ii, https://github.com/crash-utility/crash
+  iii, http://people.redhat.com/anderson/crash_whitepaper/
+   iv, https://fedoraproject.org/wiki/How_to_use_kdump_to_debug_kernel_crashes

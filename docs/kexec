@@ -23,14 +23,21 @@ HowTo
     6, kexec -l <params>
     7, kexec -e
 
+kexec-tools release packages : http://horms.net/projects/kexec/kexec-tools/
+
 Next steps :
 DONE 1, Build kernels for kexec
 DONE 2, Try it on a plat 5 device or centos 7 device
-     3, Try kexec and kdump on one device
-     4, 
+DONE 3, Try kexec and kdump on one device
+     4, kdump and post-mortem crashed kernel 
 
 References:
     1, http://lse.sourceforge.net/kdump/documentation/ols2oo5-kdump-paper.pdf
     2, http://lse.sourceforge.net/kdump/
     3, https://en.wikipedia.org/wiki/Kexec
     4, https://serverfault.com/questions/620225/how-to-properly-use-kexec-with-systemd-on-centos-7
+    5, http://www.admin-magazine.com/Articles/Analyzing-Kernel-Crash-Dumps
+    6, https://opensource.com/article/17/6/kdump-usage-and-internals
+    7, For init ramdisk : https://www.kernel.org/pub/linux/utils/boot/dracut/dracut.html#_start_udev
+    8, RedHat : https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/kernel_crash_dump_guide/chap-installing-configuring-kdump
+    9, Security of kexec : https://mjg59.dreamwidth.org/28746.html

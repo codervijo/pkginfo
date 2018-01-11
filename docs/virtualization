@@ -1,0 +1,13 @@
+1, User Model Linux (UML)
+   https://en.wikipedia.org/wiki/User-mode_Linux
+   https://help.ubuntu.com/community/UserModeLinux
+
+   Use the rootfs from here : http://fs.devloop.org.uk/
+
+   To build from kernel source: http://user-mode-linux.sourceforge.net/source.html
+
+2, Libvirt
+   is a toolkit to manage virtualization hosts
+   https://libvirt.org/
+
+3, 

@@ -1,0 +1,45 @@
+
+LVM : Linux Volume Manager
+========================== 
+
+  To use LVM, you must understand several elements. First are the regular
+physical hard drives attached to the computer. The disk space on these devices 
+is chopped up into partitions. Finally, a filesystem is written directly to a 
+partition. By comparison, in LVM, Volume Groups (VGs) are split up into 
+logical volumes (LVs), where the filesystems ultimately reside (Figure 1).
+
+Each VG is made up of a pool of Physical Volumes (PVs). You can 
+extend (or reduce) the size of a Volume Group by adding or removing 
+as many PVs as you wish, provided there are enough PVs remaining to store the 
+contents of all the allocated LVs. As long as there is available space in the 
+VG, you can also grow and shrink the size of your LVs at will (although 
+most filesystems don't like to shrink).
+
+Steps : 1, fdisk /dev/sdc
+           fdisk /dev/sdd
+           fdisk /dev/sde
+        2, pvcreate /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1
+           pvdisplay
+        3, vgcreate fileserver /dev/sdb1 /dev/sdc1 /dev/sdd1 /dev/sde1
+           vgdisplay
+        4, vgscan
+        5, lvcreate --name share --size 40G fileserver
+           lvdisplay
+        6, lvcreate --name backup --size 5G fileserver
+           lvdisplay
+        7, mkfs.ext3 /dev/fileserver/share
+
+Linux Unified Key Setup-on-disk-format (LUKS)
+
+TPM Vendors:
+    1, ASUS: https://www.amazon.com/Asus-Accessory-Module-Connector-Motherboard/dp/B01EU542SG
+    2, GigaByte : https://www.amazon.com/Gigabyte-GC-TPM-Trusted-Platform-Module/dp/B00U07T0UE
+    3, MSI/Infineon: https://www.amazon.com/MSI-Accessory-Module-Infineon-914-4136-103/dp/B00C2DKC88
+
+
+Resources
+---------
+  1, https://www.howtoforge.com/linux_lvm
+  2, http://www.linuxdevcenter.com/pub/a/linux/2006/04/27/managing-disk-space-with-lvm.html
+  3, LUKS and cryptsetup  : https://gitlab.com/cryptsetup/cryptsetup
+  4, https://wiki.centos.org/HowTos/EncryptedFilesystem
