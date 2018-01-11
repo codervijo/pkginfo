@@ -2,9 +2,13 @@
    https://en.wikipedia.org/wiki/User-mode_Linux
    https://help.ubuntu.com/community/UserModeLinux
 
+   Home : http://user-mode-linux.sourceforge.net/
    Use the rootfs from here : http://fs.devloop.org.uk/
-
    To build from kernel source: http://user-mode-linux.sourceforge.net/source.html
+   Commandline : http://lse.sourceforge.net/kdump/documentation/ols2oo5-kdump-paper.pdf
+   To debug kernel : https://opensourceforu.com/2010/09/user-mode-linux-setup-and-debug/
+
+   Book : http://flylib.com/books/en/2.275.1.14/
 
 2, Libvirt
    is a toolkit to manage virtualization hosts
