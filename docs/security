@@ -6,3 +6,7 @@ Incidents
 TPM : Trusted Platform Module
   1, https://www.trustedcomputinggroup.org/wp-content/uploads/TPM-2.0-A-Brief-Introduction.pdf
   2, https://en.wikipedia.org/wiki/Trusted_Platform_Module
+
+Hardware(CPU) Attacks
+  1, https://meltdownattack.com/meltdown.pdf
+  2, https://spectreattack.com/spectre.pdf
