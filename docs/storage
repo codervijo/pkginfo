@@ -30,6 +30,9 @@ Steps : 1, fdisk /dev/sdc
         7, mkfs.ext3 /dev/fileserver/share
 
 Linux Unified Key Setup-on-disk-format (LUKS)
+    On -disk format of LUKS: https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt
+    To manage keys for LUKS by way of initramfs : https://cryptops.com/
+
 
 TPM Vendors:
     1, ASUS: https://www.amazon.com/Asus-Accessory-Module-Connector-Motherboard/dp/B01EU542SG
@@ -43,3 +46,6 @@ Resources
   2, http://www.linuxdevcenter.com/pub/a/linux/2006/04/27/managing-disk-space-with-lvm.html
   3, LUKS and cryptsetup  : https://gitlab.com/cryptsetup/cryptsetup
   4, https://wiki.centos.org/HowTos/EncryptedFilesystem
+  5, https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt
+  6, https://www.howtoforge.com/tutorial/how-to-encrypt-a-linux-partition-with-dm-crypt-luks/
+  7, https://www.cyberciti.biz/hardware/howto-linux-hard-disk-encryption-with-luks-cryptsetup-command/

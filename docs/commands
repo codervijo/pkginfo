@@ -21,3 +21,5 @@ New Useful Linux commands
      yum --showduplicates list httpd
    + To reload udev rules
      udevadm control --reload-rules && udevadm trigger
+   + To create graphical dialog from shell/script
+     dialog --title 'Message' --msgbox 'Hello, world!' 5 20

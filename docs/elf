@@ -42,3 +42,5 @@ References
    7, Ulrich Drepper's site:
       https://www.akkadia.org/drepper/
    8, http://refspecs.linuxbase.org/elf/elf.pdf
+   9, https://www.linuxforums.org/articles/understanding-elf-using-readelf-and-objdump_125.html
+  10, http://www.linuxjournal.com/node/1060/print
