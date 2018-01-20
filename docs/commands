@@ -23,3 +23,7 @@ New Useful Linux commands
      udevadm control --reload-rules && udevadm trigger
    + To create graphical dialog from shell/script
      dialog --title 'Message' --msgbox 'Hello, world!' 5 20
+   + To find package that provides a file (works for header files too)
+     dpkg -S cdefs.h
+   + To setup/install OpenVPN on ubuntu:
+     wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh
