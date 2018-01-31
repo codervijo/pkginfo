@@ -27,3 +27,5 @@ New Useful Linux commands
      dpkg -S cdefs.h
    + To setup/install OpenVPN on ubuntu:
      wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh
+   + To setup password-less (key-only) SSH
+     https://help.ubuntu.com/community/SSH/OpenSSH/Keys
