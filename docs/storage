@@ -49,3 +49,21 @@ Resources
   5, https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt
   6, https://www.howtoforge.com/tutorial/how-to-encrypt-a-linux-partition-with-dm-crypt-luks/
   7, https://www.cyberciti.biz/hardware/howto-linux-hard-disk-encryption-with-luks-cryptsetup-command/
+  8, https://askubuntu.com/questions/181518/store-the-passphrase-of-encrypted-disk-in-etc-crypttab-encrypted
+  9, https://www.freedesktop.org/software/systemd/man/crypttab.html
+ 10, https://askubuntu.com/questions/450895/mount-luks-encrypted-hard-drive-at-boot#541352
+ 11, https://askubuntu.com/questions/450895/mount-luks-encrypted-hard-drive-at-boot#541352
+ 12, Remote unlocking of LUKS encrypted LVM using Dropbear SSH in initramfs
+     https://stinkyparkia.wordpress.com/2014/10/14/remote-unlocking-luks-encrypted-lvm-using-dropbear-ssh-in-ubuntu-server-14-04-1-with-static-ipst/
+
+
+SCSI
+====
+
+Resources
+    1, https://en.wikipedia.org/wiki/SCSI_/_ATA_Translation
+    2, NVMe : Next gen :https://en.wikipedia.org/wiki/NVM_Express#cite_note-2 
+    3, NVMe spec : http://nvmexpress.org/wp-content/uploads/NVM_Express_Revision_1.3.pdf
+    4, NVMe SSD device : http://www.tomshardware.com/reviews/intel-ssd-dc-p3700-nvme,3858-3.html
+    5, Linux SCSI driver : http://sg.danny.cz/sg/index.html
+

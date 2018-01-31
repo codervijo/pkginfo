@@ -50,3 +50,9 @@
    ii, https://github.com/crash-utility/crash
   iii, http://people.redhat.com/anderson/crash_whitepaper/
    iv, https://fedoraproject.org/wiki/How_to_use_kdump_to_debug_kernel_crashes
+    v, LKCD: Linux Kernel Crash Dump : http://lkcd.sourceforge.net/
+   vi, LK Disk dump : https://sourceforge.net/projects/lkdump/
+  vii, OLD(2006 last update)  mini kernel dump : http://mkdump.sourceforge.net/
+
+7, To create initramfs after building kernel:
+   http://www.linuxfromscratch.org/blfs/view/cvs/postlfs/initramfs.html

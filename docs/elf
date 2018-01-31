@@ -30,6 +30,12 @@ dynamic linking etc. etc.
     ---------
     Performance analysis : http://www.brendangregg.com/flamegraphs.html
 
+  ToDo Next
+  ---------
+    Elf spec : http://refspecs.linuxbase.org/elf/elf.pdf
+    ELF object file format disection : http://www.linuxjournal.com/node/1060/print 
+   ^^^^^^^^^^ Use this for goelf
+
 References
    1, https://docs.oracle.com/cd/E53394_01/html/E54813/index.html
    2, man 7 vdso

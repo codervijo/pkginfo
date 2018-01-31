@@ -15,3 +15,20 @@ Specialities
  9, ifelse is "if () then ... elseif ... end"
 10, No switch statement. Alternative  is here :
     http://lua-users.org/wiki/SwitchStatement
+
+
+Resources
+    1, JIT of lua is the fastest : http://lambda-the-ultimate.org/node/3851
+    2, Implementation of Lua 5.0
+       http://www.lua.org/doc/sblp2005.pdf
+    3, Programming with Multiple paradigms in Lua
+       http://www.inf.puc-rio.br/%7Eroberto/docs/ry09-03.pdf
+    4, General info on formal languages
+       http://staff.polito.it/silvano.rivoira/FormalLanguagesCompilers/materials.htm
+
+Parsing
+    https://en.wikipedia.org/wiki/Earley_parser
+    ANTLR parser generator :   http://www.antlr.org/about.html
+    Interpreter : http://realityforge.org/code/virtual-machines/2011/05/19/interpreters.html
+
+
