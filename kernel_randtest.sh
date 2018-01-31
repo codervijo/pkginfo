@@ -22,7 +22,7 @@ function check_prereqs {
 
     # Require vde XXX Not done now
     # Require rootfs file
-    (cd /home/vijo/projects/kernel/rootfs/ && bunzip2 CentOS6.x-AMD64-root_fs.bz2)
+    #(cd /home/vijo/projects/kernel/rootfs/ && bunzip2 CentOS6.x-AMD64-root_fs.bz2)
 }
 
 function setup_env {
