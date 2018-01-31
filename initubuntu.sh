@@ -11,6 +11,8 @@ sudo apt install -y cscope
 
 # Build Linux kernel
 sudo apt-get install -y libncurses5-dev gcc make git exuberant-ctags bc libssl-dev
+sudo apt-get install -y libc6 libc6-dev
+sudo apt-get install -y gcc-multilib g++-multilib
 
 # BATS - Bash Unit test framework, useful to learn new code
 sudo apt install -y bats
