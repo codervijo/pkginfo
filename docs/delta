@@ -1,0 +1,8 @@
+                            Delta Encoding 
+
+1, https://tools.ietf.org/html/rfc3284
+2, https://www.w3.org/TR/NOTE-gdiff-19970901
+3, https://en.wikipedia.org/wiki/Xdelta
+4, Samba guy Andrew Tridgell's PhD: https://www.samba.org/~tridge/phd_thesis.pdf
+5, https://en.wikipedia.org/wiki/String-to-string_correction_problem
+6, https://en.wikipedia.org/wiki/Suffix_array
