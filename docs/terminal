@@ -18,4 +18,8 @@ https://github.com/ulfalizer/Kconfiglib
 
 kconfig-frontends, finally, is a stand-alone clone of the Kconfig implementation that is part of the kernel. It makes it possible to use Kconfig in other projects without having to copy it and maintain it separately.
 
+The console ioctls are documented here : 
+https://www.helpnetsecurity.com/2002/04/08/console-ioctls-under-linux/
 
+useful info also in man console_ioctl
+console_ioctl(4), console_codes(4)
