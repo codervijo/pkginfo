@@ -21,5 +21,10 @@ kconfig-frontends, finally, is a stand-alone clone of the Kconfig implementation
 The console ioctls are documented here : 
 https://www.helpnetsecurity.com/2002/04/08/console-ioctls-under-linux/
 
+Termios : https://blog.nelhage.com/2009/12/a-brief-introduction-to-termios/
+
+https://www.linux.com/learn/intro-to-linux/2018/1/how-change-your-linux-console-fonts
+
 useful info also in man console_ioctl
 console_ioctl(4), console_codes(4)
+

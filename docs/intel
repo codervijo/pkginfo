@@ -49,6 +49,8 @@ Intel Hardware specs and features
    http://www-pc.uni-regensburg.de/hardware/techdok/bios_dmi_20.pdf
 10, UEFI
    https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface
+   UEFI application example :
+       https://github.com/mjg59/shim
 11, X86 register decoder
    https://github.com/kernelslacker/x86info
    All technical x86 processsor information
