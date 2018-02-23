@@ -6,3 +6,6 @@
 4, Samba guy Andrew Tridgell's PhD: https://www.samba.org/~tridge/phd_thesis.pdf
 5, https://en.wikipedia.org/wiki/String-to-string_correction_problem
 6, https://en.wikipedia.org/wiki/Suffix_array
+7, Nice animation of the LCS algorithm here:
+   http://wordaligned.org/articles/longest-common-subsequence
+8, Algo for VCDIFF : http://www.xmailserver.org/diff2.pdf
