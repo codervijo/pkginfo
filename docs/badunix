@@ -1,0 +1,6 @@
+1, killall can't kill a process started with perl.
+   eg. run cpan as perl cpan killall cpan will do nothing.
+   It is also true for processes started as "sh XYZ"
+2, timeout 10 <xyz> doesn't return error message from xyz
+   but creates its own error. There should at least be an option to return
+   errors and exit codes as is
