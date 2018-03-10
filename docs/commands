@@ -29,3 +29,46 @@ New Useful Linux commands
      wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh
    + To setup password-less (key-only) SSH
      https://help.ubuntu.com/community/SSH/OpenSSH/Keys
+   + Script to check if all binaries are executable on a system:
+     for f in /sbin/[s][wy]*; do
+         if [ x"$f" == x"/bin/nsenter" ]; then continue; fi;
+         if [ x"$f" == x"/bin/newgrp" ]; then continue; fi;
+         if [ x"$f" == x"/bin/i386" ]; then continue; fi;
+         if [ x"$f" == x"/bin/linux32" ]; then continue; fi;
+         if [ x"$f" == x"/bin/linux64" ]; then continue; fi;
+         if [ x"$f" == x"/bin/setarch" ]; then continue; fi;
+         if [ x"$f" == x"/bin/x86_64" ]; then continue; fi;
+         if [ x"$f" == x"/sbin/halt" ]; then continue; fi;
+         if [ x"$f" == x"/sbin/runlevel" ]; then continue; fi;
+         if [ x"$f" == x"/sbin/telini" ]; then continue; fi;
+         if [ x"$f" == x"/sbin/reboot" ]; then continue; fi;
+         if [ x"$f" == x"/sbin/shutdown" ]; then continue; fi;
+         if [ x"$f" == x"/sbin/poweroff" ]; then continue; fi;
+         if [ x"$f" == x"/sbin/killall" ]; then continue; fi;
+         if [ x"$f" == x"/sbin/killall5" ]; then continue; fi;
+         (
+             mainpid=$$;
+             echo -n "$f .."; 
+             (
+                  sleep 5;
+                  kill $mainpid;
+                  killall $f
+             )&
+             $f 1>/tmp/11 2>/tmp/22;
+             ldp=$(grep ELF /tmp/22 | wc -l);
+             if [ $ldp -ge 1 ]; then echo "... yes";
+                                     echo $f>>/tmp/badone;
+                                else echo "... no";
+             fi;
+         )
+     done
+
+     NOTE: Even afer so many checks, there are other programs that are
+     started as "sh xyz" or "perl xyz" that cannot be killed even with killall.
+     For those, and others that invoke a shell, those processes must be killed
+     by hand.
+
+   + Script to read a file line by line
+     while read -r line; do echo "$line"; done<"/tmp/badone"
+
+
