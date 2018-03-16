@@ -1,0 +1,51 @@
+1, https://teleread.org/2017/01/08/review-the-czur-et-series-book-scanner-is-much-better-than-doing-it-yourself/
+     + table top, small scanner
+     - manual page turning
+     + $400
+
+2, DIY book scanner
+     + http://teleread.com/the-300-do-it-yourself-book-scanner-2/
+     + http://www.diybookscanner.org/en/intro.html
+     + there are vendors who sell better kits, more complete kits
+     - time to assemble, get everything right
+
+3, Google's linear book scanner
+     + DIY
+     - not too well tested
+     + https://linearbookscanner.org/
+
+4, Another cheap DIY option
+     + http://www.instructables.com/id/New-Improved-Portable-Paperless-Digital-Copy-M/
+     + cheap
+     - too much assembly
+     - too manual
+
+5, High end automated scanner
+     + http://www.treventus.com/automatic-book-scanner-scanrobot.html
+     - too expensive
+     - takes up too much room
+
+6, commercial scanners
+     + https://www.thecrowleycompany.com/scanners-software/product-types/book-copiers/
+
+     + Another one : claims to be first and best
+       http://www.4digitalbooks.com/_auto_dlmini.php
+     - TODO
+
+7, Cut book, scan it through our current copier
+     + cheap
+     - book destroyed
+     + not too much intervention required
+     - need to figure out better scanning software
+
+8, Another DIY
+     + http://teleread.com/bookliberator-200-diy-scanner/
+     + 
+ 
+
+
+References
+   1, https://en.wikipedia.org/wiki/Book_scanning
+   2, https://lj.libraryjournal.com/2011/06/technology/product-watch-library-scanners/ 
+   3, IEEE on this problem
+      https://spectrum.ieee.org/automaton/robotics/robotics-software/book-flipping-scanning
