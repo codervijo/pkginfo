@@ -56,3 +56,50 @@
 
 7, To create initramfs after building kernel:
    http://www.linuxfromscratch.org/blfs/view/cvs/postlfs/initramfs.html
+
+8, Linux kernel 2.6+ has implementation of crypto in it.
+   API is here: http://www.chronox.de/crypto-API/crypto/
+   LJ Article on the topic : https://www.linuxjournal.com/article/6451
+
+   Crypto acceleration is also possible inside kernel.
+   One way to do that, is to use instructions for AES on Intel and AMD
+   https://en.wikipedia.org/wiki/AES_instruction_set
+   For ARM: https://schd.ws/hosted_files/ossna2017/37/Linux_crypto_API_tutorial.pdf
+
+   Implementation details:
+      The transformation object (TFM) is an instance of a transformation
+      implementation. There can be multiple transformation objects associated
+      with a single transformation implementation. Each of those transformation
+      objects is held by a crypto API consumer or another transformation.
+      Transformation object is allocated when a crypto API consumer requests
+      a transformation implementation. The consumer is then provided with a
+      structure, which contains a transformation object (TFM).
+
+      Algorithm implementations—kernel modules that contain the underlying
+      algorithm code.
+
+      Transforms—objects that instantiate algorithms, manage internal state
+      and handle common implementation logic. Transforms are managed by 
+                crypto_alloc_tfm() and crypto_free_tfm().
+      A set of API wrappers are provided to simplify transform use and
+      to allow the properties of a transform's underlying algorithm to
+      be queried.
+
+      The following pseudo-code demonstrates a typical use of the transform
+      interface, where some kernel code needs to encrypt data using the
+      Blowfish cipher in electronic codebook (ECB) mode:
+
+      tfm = crypto_alloc_tfm("blowfish",
+                             CRYPTO_TFM_MODE_ECB);
+      crypto_cipher_setkey(tfm, key, keylength);
+      crypto_cipher_encrypt(tfm, &scatterlist,
+                            numlists);
+      crypto_free_tfm(tfm);
+
+      Userspace API to these algorithms is through netlink sockets.
+      The interface is provided via socket type using the type AF_ALG.
+      In addition, the setsockopt option type is SOL_ALG.
+      User space invokes the cipher operation with the send()/write()
+      system call family. The result of the cipher operation is obtained
+      with the read()/recv() system call family.
+
