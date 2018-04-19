@@ -103,3 +103,9 @@
       system call family. The result of the cipher operation is obtained
       with the read()/recv() system call family.
 
+      AES-NI
+      ======
+      Intel instructions for AES: 
+      https://software.intel.com/en-us/articles/intel-advanced-encryption-standard-instructions-aes-ni
+      https://www.intel.com/content/dam/doc/white-paper/advanced-encryption-standard-new-instructions-set-paper.pdf
+      https://software.intel.com/en-us/node/256280
