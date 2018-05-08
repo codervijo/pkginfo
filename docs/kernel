@@ -109,3 +109,7 @@
       https://software.intel.com/en-us/articles/intel-advanced-encryption-standard-instructions-aes-ni
       https://www.intel.com/content/dam/doc/white-paper/advanced-encryption-standard-new-instructions-set-paper.pdf
       https://software.intel.com/en-us/node/256280
+
+      To let dm_crypt run it's benchmark:
+      cryptsetup benchmark (that will show aes almost 10x twofish if it is
+                  using accelerated instructions) 
