@@ -29,6 +29,8 @@ New Useful Linux commands
      wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh
    + To setup password-less (key-only) SSH
      https://help.ubuntu.com/community/SSH/OpenSSH/Keys
+   + To list files inside an RPM file
+     rpm -qlp techrx.rpm
    + Script to check if all binaries are executable on a system:
      for f in /sbin/[s][wy]*; do
          if [ x"$f" == x"/bin/nsenter" ]; then continue; fi;
@@ -70,5 +72,7 @@ New Useful Linux commands
 
    + Script to read a file line by line
      while read -r line; do echo "$line"; done<"/tmp/badone"
+   + Script to read value in a file into shell variable
+     pid=$(<"/var/run/PROC.pid")
 
 
