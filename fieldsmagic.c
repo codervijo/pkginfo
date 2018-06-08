@@ -143,10 +143,10 @@ int main()
 	assert(form != NULL);
 	set_form_win(form, win_form);
  
-	subwin1 = derwin(win_form, 10, 54, 4, 4);
-        box(subwin1, 0, 0);
-	//set_form_sub(form, derwin(win_form, 18, 76, 1, 1));
-        set_form_sub(form, subwin1);
+	//subwin1 = derwin(win_form, 10, 54, 4, 4);
+        //box(subwin1, 0, 0);
+	set_form_sub(form, derwin(win_form, 18, 76, 1, 1));
+        //set_form_sub(form, subwin1);
 	post_form(form);
 
 	refresh();
