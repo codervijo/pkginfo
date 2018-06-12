@@ -31,6 +31,16 @@ New Useful Linux commands
      https://help.ubuntu.com/community/SSH/OpenSSH/Keys
    + To list files inside an RPM file
      rpm -qlp techrx.rpm
+   + To install RPM file ignoring all dependencies
+     rpm -ivh --nodeps mylocalrpm.rpm  --force
+   + Extract local files from RPM
+     rpm2cpio ./packagecloud-test-1.1-1.x86_64.rpm | cpio -idmv
+   + Get dependency list of a given RPM
+     yum deplist ./mylocalrpm.rpm
+   + Use yum to install all dependecies of a given RPM
+     yum deplist mylocalrpm.rpm |awk '/provider:/ {print $2}'|sort -u|xargs yum -y install
+   + Use yum to install local RPM file
+     yum --nogpgcheck localinstall mylcoalrpm.rpm 
    + Script to check if all binaries are executable on a system:
      for f in /sbin/[s][wy]*; do
          if [ x"$f" == x"/bin/nsenter" ]; then continue; fi;
