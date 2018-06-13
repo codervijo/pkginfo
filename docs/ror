@@ -1,0 +1,18 @@
+Ruby On Rails
+-------------
+
+To get a project started:
+
+To add more fields to existing model:
+
+Calling C library from Ruby:
+  Options: 1, Fiddle
+           2, FFI gem  https://github.com/ffi/ffi
+           3, RubyInline
+           4, RICE
+
+
+Resources:
+  1, 
+  2, https://www.railstutorial.org/book/
+  3, https://www.amberbit.com/blog/2014/6/12/calling-c-cpp-from-ruby/
