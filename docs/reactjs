@@ -1,0 +1,28 @@
+React JS Framework from FB
+
+
+
+Install
+  1, Get brackets IDE installed
+     a, sudo add-apt-repository ppa:webupd8team/brackets
+     b, sudo apt-get update
+     c, sudo apt-get install brackets
+  2, Get NPM installed
+     a, sudo apt-get install -y nodejs
+  3, Install React
+     a, sudo npm install -g create-react-app
+     b, sudo ln -s /usr/bin/nodejs /usr/bin/node
+
+
+Create new app
+  1, On debian-based system, make sure /usr/bin/node points to nodejs
+  2, create-react-app helloworld
+  3, cd helloworld && npm start
+  4, You can now see the project in a browser window
+
+
+
+
+Reference
+  1, https://reactjs.org/docs/
+  2, https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript

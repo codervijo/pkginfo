@@ -12,7 +12,8 @@ Calling C library from Ruby:
            4, RICE
 
 
-Resources:
+Reference
   1, 
   2, https://www.railstutorial.org/book/
   3, https://www.amberbit.com/blog/2014/6/12/calling-c-cpp-from-ruby/
+  4, Best resource for reference : railscasts.com

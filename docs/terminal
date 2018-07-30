@@ -28,3 +28,7 @@ https://www.linux.com/learn/intro-to-linux/2018/1/how-change-your-linux-console-
 useful info also in man console_ioctl
 console_ioctl(4), console_codes(4)
 
+Resources
+   Termios : https://blog.nelhage.com/2009/12/a-brief-introduction-to-termios-termios3-and-stty/
+
+   TTY : https://www.linusakesson.net/programming/tty/
