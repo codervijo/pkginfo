@@ -46,7 +46,7 @@ static void driver(int ch)
 	int i;
 
 	switch (ch) {
-		case KEY_F(2):
+		case 'P':
 			// Or the current field buffer won't be sync with what is displayed
 			form_driver(form, REQ_NEXT_FIELD);
 			form_driver(form, REQ_PREV_FIELD);
@@ -153,7 +153,7 @@ int main()
 	wrefresh(win_body);
 	wrefresh(win_form);
 
-	while ((ch = getch()) != KEY_F(1))
+	while ((ch = getch()) != 'q')
 		driver(ch);
 
 	unpost_form(form);
