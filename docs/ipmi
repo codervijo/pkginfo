@@ -1,0 +1,30 @@
+IPMI - Intelligent Platform Management Interface
+
+History
+  v1.0 in 1998
+
+Companies - Intel, SuperMicro etc.
+
+Commands
+--------
+  To check if ipmi drivers are loaded
+     ls -l /dev/ipmi*
+  To insert ipmi drivers
+     modprobe ipmi_devintf
+  To see manufacturer info
+     ipmitool fru print
+
+Acronyms:
+---------
+  BMC  - Baseboard Management Controller
+  IPMB - Intelligent Platform Management Bus
+  ICMB - Intelligent Chassis  Management Bus
+  SDR  - Sensor Data Records
+  SOL  - Serial Over LAN
+  SSIF - SMBus System Interface
+  DCMI - Data Center Management Interface
+  KCS  - Keyboard Controller Style
+
+Architecture
+------------
+
