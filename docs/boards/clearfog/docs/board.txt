@@ -1,0 +1,59 @@
+1, Datasheet is here : 
+   https://wiki.solid-run.com/lib/exe/fetch.php?media=a38x:carrierboard:docs:sr-a38x-clearfog-pro-datasheet.pdf
+
+  Has physical description of the board, features and various connectors
+
+2, All these boards have Mikrobus. More about Mikrobus here:
+https://www.mikroe.com/blog/development-boards-that-support-mikrobus
+
+
+3, For pre-built binaries to boot the units, download it here:
+https://www.solid-run.com/downloads/
+  (Note: Yocto links didn't work)
+
+4, Debian on A38x CPU on SolidRun boards:
+https://wiki.solid-run.com/doku.php?id=products:a38x:software:os:debian
+
+5, Uboot on Clearfog-A1 boards:
+https://www.solid-run.com/wiki/doku.php?id=products:a38x:software:development:u-boot
+https://images.solid-build.xyz/A38X/U-Boot/
+
+6, SolidRun forums for more help:
+https://forum.solid-run.com/software-f32/how-to-use-openwrt-with-clearfog-base--t3067-s10.html
+
+7, Flashing image, booting:
+https://github.com/MarvellEmbeddedProcessors/openwrt-bb/wiki/ClearFog-a1-Instructions
+
+8, All Wiki docs on A38x and clearfog from Solidrun:
+https://wiki.solid-run.com/doku.php?id=products:a38x:documents#clearfog
+
+Notes about bring up
+  0, 12V supply with 2, 2.5A 
+  1, Console port is Micro USB
+  2, Boards with eMMC can NOT boot from SD card
+  3, My (pro) board was marked wrong for UART DIP setting. Document on the
+     website was more accurate for that.
+  3, use specialized uboot from uart to get files copied to eMMC
+  4, Make sure not to have any other process holding /dev/ttyUSB0 open during
+     run of kwboot
+  5, Use debian to start. root password : debian
+
+
+Steps to run
+ $ cd ../bsp
+ $ sudo ./kwboot -t -b u-boot-spl-uart.kwb /dev/ttyUSB0 -B 115200n8
+  
+
+
+Notes about the Company
+  This board, Clearfog A-1 is made by Solid-Run, as Israel based board hardware
+  company. Here are other boards worth exploring, from them:
+    https://wiki.solid-run.com/doku.php?id=products:a38x:software:os:debian
+    https://macchiatobin.net
+    http://espressobin.net
+
+  Very helpful AE from the company, Baruch Siah baruch@tkos.co.il
+  Also helped by sales person Shira Mayer shira@solid-run.com
+
+
+

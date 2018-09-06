@@ -1,0 +1,28 @@
+1, Datasheet
+   http://www.t-firefly.com/download/Firefly-RK3399/docs/Chip%20Specifications/Rockchip_RK3399_Datasheet_V0.7_20160219.pdf
+
+   Start here for all detailed docs : http://en.t-firefly.com/doc/product/info/id/440.html
+  
+2, Introduction
+   https://www.cnx-software.com/2016/12/05/firefly-rk3399-rockchip-rk3399-development-board-launched-on-kickstarter-for-139-and-up/
+
+3, Confusion : CPU/SoC name and board name seems to be same.
+   I didn't get exact board name that Nick bought.
+   But from picture on the site, it seems to be this board name: AIO-3399J
+
+4, Confusion 2 : SD image. Most ubuntu images are in 7z, but image is not
+   for SD. Find image with "SD" in its name.
+
+5, Confusion 3 : Board doesn't power up on connecting power cable. No LED.
+   Power cable was tested OK. But the power connection to the board was loose.
+   Making the power stable made it boot OK.
+
+
+Resources
+  1, Starter Guide
+     http://en.t-firefly.com/doc/product/info/id/440.html
+  2, Booting AIO-3399J
+     https://www.cnx-software.com/2018/08/06/aio-3399j-development-board-review-ubuntu-16-04/
+  3, Vendor's page for AIO-3399J
+     http://en.t-firefly.com/doc/product/index/id/31.html
+

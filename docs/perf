@@ -1,0 +1,21 @@
+Board/CPU performance Benchmarking
+----------------------------------
+  Note : I would like to pick a cpu/board based on it's compute power. With
+         multi-core multi-processor boards, that becomes very hard. Question
+         also arises what is the kind of load expected on the target.
+
+         But as a goal, performance bench marking software should give a
+         cumulative score (regardless of number of CPUs/Cores).
+
+  Contenders : sysbench (install with apt)
+               phronix Test suite
+               bonnie++ (install with apt)
+               For disk : dd(1) or scripts wrapping dd(1)
+
+ 
+
+   Reference:
+       1, https://www.jamescoyle.net/how-to/599-benchmark-disk-io-with-dd-and-bonnie
+       2, https://www.howtoforge.com/how-to-benchmark-your-system-cpu-file-io-mysql-with-sysbench
+       3, 
+

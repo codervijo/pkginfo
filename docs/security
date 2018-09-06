@@ -1,7 +1,28 @@
 Incidents
   1, MAJOR Incident. Equifax.
      https://thehackernews.com/2017/03/apache-struts-framework.html
+        This was 
+  2, https://www.riskiq.com/blog/labs/magecart-newegg/
+        https://www.clearskysec.com/magecart/
+        Magecart is a malicious infra for stealing payment details from online
+        shops. In short, web-based key logger.
 
+        Current method to stop this is called subresource  integrity or SRI
+        https://scotthelme.co.uk/enforcing-the-use-of-sri/
+  3, https://threader.app/thread/1039585850848362497
+        feedify was owned by magecart
+        Ticketmaster was also owned by magecart
+  4, Google's response to threats
+        http://www.eweek.com/security/alphabet-s-chronicle-security-business-launches-virustotal-enterprise
+  5, https://www.bleepingcomputer.com/news/security/xbash-malware-deletes-databases-on-linux-mines-for-coins-on-windows/
+        Malware that deletes databases on Linux, and mines on Windows.
+  6, Wordpress security
+     https://www.wpexplorer.com/wordpress-malware-scan-plugins/
+        It is still dynamic,not static pages in WP.
+        Default username,password is another problem.
+
+  Username,password is a big problem
+ 
 
 TPM : Trusted Platform Module
   1, https://www.trustedcomputinggroup.org/wp-content/uploads/TPM-2.0-A-Brief-Introduction.pdf

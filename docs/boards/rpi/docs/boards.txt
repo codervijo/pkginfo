@@ -1,0 +1,3 @@
+Reference
+ 1, Getting started Guide
+     https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up

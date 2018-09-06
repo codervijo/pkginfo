@@ -33,6 +33,8 @@ New Useful Linux commands
      rpm -qlp techrx.rpm
    + To install RPM file ignoring all dependencies
      rpm -ivh --nodeps mylocalrpm.rpm  --force
+   + To install RPM using yum
+     yum localinstall mylocalrpm.rpm -y
    + Extract local files from RPM
      rpm2cpio ./packagecloud-test-1.1-1.x86_64.rpm | cpio -idmv
    + Get dependency list of a given RPM
