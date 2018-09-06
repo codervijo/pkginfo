@@ -17,3 +17,6 @@ Reference
   2, https://www.railstutorial.org/book/
   3, https://www.amberbit.com/blog/2014/6/12/calling-c-cpp-from-ruby/
   4, Best resource for reference : railscasts.com
+  5, Authentication : https://blog.codeship.com/why-you-shouldnt-roll-your-own-authentication/
+  6, Security audit of bundles, gems : https://github.com/rubysec/bundler-audit
+  7, static analysis tool for Ror : https://github.com/presidentbeef/brakeman
