@@ -56,4 +56,6 @@ Notes about the Company
   Also helped by sales person Shira Mayer shira@solid-run.com
 
 
+Other resources
+  1 https://wtarreau.blogspot.com/2016/09/installing-linux-on-solidrun.html
 
