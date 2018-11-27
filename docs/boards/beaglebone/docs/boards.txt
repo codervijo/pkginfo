@@ -1,0 +1,16 @@
+Beagleboard 
+
+Main URL : http://beagleboard.org/black
+
+Beaglebone Black Board (BBB)
+    Processor : AM335x 1GHz ARM Cortex-A8 from TI
+    Ubuntu On BBB : https://beagleboard.org/p/robertcnelson-myopenid-com/ubuntu-6c7f26
+
+    Getting Started : http://beagleboard.org/getting-started
+
+
+ URL to download prebuilt image : https://beagleboard.org/latest-images
+ Or from direct URL : https://debian.beagleboard.org/images/bone-debian-9.5-iot-armhf-2018-10-07-4gb.img.xz
+
+
+ Before you start, you will need micro-HDMI cable. Or micro-hdmi to HDMI adapter
