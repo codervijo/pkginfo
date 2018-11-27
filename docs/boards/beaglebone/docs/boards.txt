@@ -12,5 +12,10 @@ Beaglebone Black Board (BBB)
  URL to download prebuilt image : https://beagleboard.org/latest-images
  Or from direct URL : https://debian.beagleboard.org/images/bone-debian-9.5-iot-armhf-2018-10-07-4gb.img.xz
 
+ You can write that image on to the micro SD card using etcher.
 
- Before you start, you will need micro-HDMI cable. Or micro-hdmi to HDMI adapter
+ Before you start, you will need 
+      1, micro-HDMI cable. Or micro-hdmi to HDMI adapter
+      2, Micro SD card with image written on it
+      3, 5V adapter for power
+ 
