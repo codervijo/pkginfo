@@ -1,0 +1,10 @@
+
+CPIO
+----
+  - ramfs : https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/ramfs-rootfs-initramfs.txt?id=HEAD
+  - https://www.linuxjournal.com/article/1213
+  - https://superuser.com/questions/343915/what-is-the-difference-between-tar-vs-cpio-archive-file-formats#343943
+
+Rsync
+-----
+ http://tutorials.jenkov.com/rsync/overview.html

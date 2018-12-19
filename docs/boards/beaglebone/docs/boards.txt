@@ -19,3 +19,6 @@ Beaglebone Black Board (BBB)
       2, Micro SD card with image written on it
       3, 5V adapter for power
  
+
+CPU Documentation
+      1, AM335x Sitara Processors : http://www.ti.com/lit/ds/symlink/am3352.pdf
