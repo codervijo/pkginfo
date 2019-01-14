@@ -115,6 +115,9 @@
                   using accelerated instructions) 
 
 6, BPF : Berkeley Packet Filter
+    https://www.phoronix.com/scan.php?page=news_item&px=BPF-Understanding-Kernel-VM
+    https://events.static.linuxfound.org/sites/events/files/slides/bpf_collabsummit_2015feb20.pdf
+    http://www.tcpdump.org/papers/bpf-usenix93.pdf
    
 
 
@@ -123,3 +126,7 @@ Documents for kernel internals
   2, http://horms.net/projects/kexec/lca/2007/kexec.pdf
   3, https://web.njit.edu/~hung/cs332/Chap08-E7.pdf
   4, http://www.tcpdump.org/papers/bpf-usenix93.pdf
+  5, https://www.htlinux.com/parallel_port_control_in_linux/
+https://software.intel.com/en-us/blogs/2009/03/02/intels-virtualization-for-directed-io-aka-iommu-part-1/
+https://en.wikipedia.org/wiki/IOMMU
+
