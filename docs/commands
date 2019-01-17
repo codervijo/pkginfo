@@ -31,6 +31,8 @@ New Useful Linux commands
      https://help.ubuntu.com/community/SSH/OpenSSH/Keys
    + To list files inside an RPM file
      rpm -qlp techrx.rpm
+   + To extract files from RPM
+     rpm2cpio lm_sensors-3.4.0-4.20160601gitf9185e5.el7.src.rpm |cpio -idmv
    + To install RPM file ignoring all dependencies
      rpm -ivh --nodeps mylocalrpm.rpm  --force
    + To install RPM using yum

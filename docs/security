@@ -30,6 +30,13 @@ TPM : Trusted Platform Module
   3, http://www.springer.com/us/book/9781430265832
   4, http://www.springer.com/us/book/9783319087436
 
+
+
+   https://github.com/tpm2-software/tpm2-tools/wiki/How-to-use-tpm2-tools
+https://github.com/tpm2-software/tpm2-tools/wiki/Getting-Started
+https://blog.hansenpartnership.com/tpm2-and-linux/
+
+
 Hardware(CPU) Attacks
   1, https://meltdownattack.com/meltdown.pdf
   2, https://spectreattack.com/spectre.pdf

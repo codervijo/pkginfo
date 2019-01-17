@@ -22,3 +22,9 @@ Beaglebone Black Board (BBB)
 
 CPU Documentation
       1, AM335x Sitara Processors : http://www.ti.com/lit/ds/symlink/am3352.pdf
+
+
+Reference
+  BeagleBox Features : https://github.com/beagleboard/beaglebone-black/wiki#BeagleBone_Black_Features
+  BeagleBox Images : https://beagleboard.org/latest-images
+                    https://elinux.org/BeagleBoardUbuntu#Method_1:_Download_a_Complete_Pre-Configured_Image
