@@ -20,15 +20,31 @@ Incidents
      https://www.wpexplorer.com/wordpress-malware-scan-plugins/
         It is still dynamic,not static pages in WP.
         Default username,password is another problem.
+  7, Security News (Great resource)
+     https://www.secjuice.com/
+  8, https://krebsonsecurity.com/
+  9, Developer training for various vulernabilities
+     https://www.hacksplaining.com/login
+ 10, They give you a linux box to hack into
+     https://www.hackthebox.eu/
+ 11, Browser tooltips on links to show threat potential
+     https://github.com/cloudtracer/ThreatPinchLookup/wiki
+ 12, 
 
   Username,password is a big problem
  
+
+Linux Hardening
+   1, Checklist
+      https://github.com/trimstray/linux-hardening-checklist#protect-bootloader-config-files
+   2, https://github.com/trimstray/the-practical-linux-hardening-guide/blob/master/README.md
 
 TPM : Trusted Platform Module
   1, https://www.trustedcomputinggroup.org/wp-content/uploads/TPM-2.0-A-Brief-Introduction.pdf
   2, https://en.wikipedia.org/wiki/Trusted_Platform_Module
   3, http://www.springer.com/us/book/9781430265832
   4, http://www.springer.com/us/book/9783319087436
+  5, http://archiv.infsec.ethz.ch/education/projects/archive/TPMEmulatorReport.pdf
 
 
 

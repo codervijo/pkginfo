@@ -9,7 +9,15 @@ https://www.kernel.org/pub/linux/utils/boot/dracut/dracut.html
    Note: instead of $(uname -r) you can specify another kernel version
 2, you can add kernel drivers to this list.
 3, Adding "rd.shell" to kernel commandline will drop you into the dracut shell
+   also remove these from kernel commandline : "rhgb" "quiet"
+4, You can also set breakpoints to get into dracut shell at differnt points
+   during boot sequence
+    rd.break=[cmdline|pre-udev|pre-trigger|initqueue|pre-mount|mount|pre-pivot|cleanup] 
 4, PROBLEM : dracut shell sometimes doesn't take input
+5, How to debug dracut problems : https://fedoraproject.org/wiki/How_to_debug_Dracut_problems
+6, Dracut Documentation : https://people.redhat.com/harald/dracut.html#id489921
+7, Dracut examples : https://www.systutorials.com/docs/linux/man/8-dracut/
+
 
 References
 ----------
