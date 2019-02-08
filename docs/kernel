@@ -127,6 +127,10 @@ Documents for kernel internals
   3, https://web.njit.edu/~hung/cs332/Chap08-E7.pdf
   4, http://www.tcpdump.org/papers/bpf-usenix93.pdf
   5, https://www.htlinux.com/parallel_port_control_in_linux/
-https://software.intel.com/en-us/blogs/2009/03/02/intels-virtualization-for-directed-io-aka-iommu-part-1/
-https://en.wikipedia.org/wiki/IOMMU
+  6, https://software.intel.com/en-us/blogs/2009/03/02/intels-virtualization-for-directed-io-aka-iommu-part-1/
+  7, https://en.wikipedia.org/wiki/IOMMU
+  8, https://www.netfilter.org/
+  9, https://kernel.googlesource.com/pub/scm/linux/kernel/git/pablo/nf-next.git
+ 10, https://elixir.bootlin.com/linux/
+
 
