@@ -25,6 +25,10 @@ Resources
        http://www.inf.puc-rio.br/%7Eroberto/docs/ry09-03.pdf
     4, General info on formal languages
        http://staff.polito.it/silvano.rivoira/FormalLanguagesCompilers/materials.htm
+    5, Lua VM
+       http://luaforge.net/docman/83/98/ANoFrillsIntroToLua51VMInstructions.pdf
+    6, Lua bytecode  inspector library in C
+       http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbci
 
 Parsing
     https://en.wikipedia.org/wiki/Earley_parser

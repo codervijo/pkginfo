@@ -90,5 +90,8 @@ New Useful Linux commands
      pid=$(<"/var/run/PROC.pid")
    + List of many tcpdump commands
      https://hackertarget.com/tcpdump-examples/
+   + Given commit, which tag/version does it belong to?
+     git describe --contains 68273712a19e9107a498a371532b3b3eb6dbb14c
+     git describe --contains <COMMIT_ID>
 
 
