@@ -1,0 +1,36 @@
+How to scale web systems OR server software?
+
+One more recent mechanism has been Key Value DB as communication mechanism
+eg. Redis
+
+Redis Resources
+  1, https://www.tutorialspoint.com/redis/redis_pub_sub.htm
+  2, https://redis.io/topics/pubsub
+
+Those resources are for the pubsub design pattern
+Redis can be used with other patterns, but that is a very useful first step.
+ https://www.fiznool.com/blog/2016/02/24/building-a-simple-message-queue-with-redis/
+
+Here is disque : distributed message broker 
+  (similar to redis but with persistent message queue, or reliable MQ):
+  1, https://github.com/antirez/disque
+
+
+More famous Message Queue implementation is : http://zeromq.org/
+
+All such queues are listed here in this wonderful list/resource : 
+   http://queues.io/
+
+Nanomsg claims to be zeroMQ done right : https://hguemar.fedorapeople.org/slides/nanomsg/presentation.html#slide1
+
+https://nanomsg.org/
+New implementation of nanomsg : https://github.com/nanomsg/nng
+
+Beanstalk is another lightweight MQ usd by some streaming applications online:
+https://github.com/beanstalkd/beanstalkd
+simple, fast work queue
+
+Using beanstalk from ruby or RoR apps: http://railscasts.com/episodes/243-beanstalkd-and-stalker?view=asciicast
+
+Beanstalk can persist.
+
