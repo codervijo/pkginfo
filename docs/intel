@@ -51,6 +51,11 @@ Intel Hardware specs and features
    https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface
    UEFI application example :
        https://github.com/mjg59/shim
+   UEFI docs from intel
+       https://software.intel.com/en-us/articles/uefi-shell/
+   Ubuntu UEFI shell in VM
+       https://wiki.ubuntu.com/UEFI/OVMF
+   https://github.com/tianocore/tianocore.github.io/wiki/Tasks
 11, X86 register decoder
    https://github.com/kernelslacker/x86info
    All technical x86 processsor information

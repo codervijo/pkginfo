@@ -132,5 +132,8 @@ Documents for kernel internals
   8, https://www.netfilter.org/
   9, https://kernel.googlesource.com/pub/scm/linux/kernel/git/pablo/nf-next.git
  10, https://elixir.bootlin.com/linux/
+ 11, Apple Darwin kernel : https://developer.apple.com/library/archive/documentation/Darwin/Conceptual/KernelProgramming/build/build.html
+ 12, https://accelazh.github.io/kernel/Build-Linux-Kernel-and-Live-Debugging
+ 13, https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel
 
 
