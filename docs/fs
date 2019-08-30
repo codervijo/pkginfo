@@ -22,3 +22,7 @@ Locking file
      removed when any file descriptor for that file is closed by that
      process, even if a lock was never requested for that file descriptor
  
+
+Kernel VFS resources
+  1, https://www.linuxjournal.com/article/2108
+

@@ -42,3 +42,9 @@ Read - next January 2019
     2, https://www.oreilly.com/library/view/creating-solid-apis/9781491986301/
     3, https://the-ravi-programming-language.readthedocs.io/en/latest/lua_bytecode_reference.html#
     4, 
+
+Advanced Lua References
+    1, http://luaforge.net/docman/83/98/ANoFrillsIntroToLua51VMInstructions.pdf
+    2, http://files.catwell.info/misc/mirror/lua-5.2-bytecode-vm-dirk-laurie/lua52vm.html
+    3, http://webserver2.tecgraf.puc-rio.br/~lhf/ftp/lua/
+

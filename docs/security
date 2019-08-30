@@ -45,6 +45,17 @@ TPM : Trusted Platform Module
   3, http://www.springer.com/us/book/9781430265832
   4, http://www.springer.com/us/book/9783319087436
   5, http://archiv.infsec.ethz.ch/education/projects/archive/TPMEmulatorReport.pdf
+  6, Implementing Platform protection for Linux
+     http://www.jwsecure.com/2017/02/07/implementing-platform-protection-for-linux/
+  7, LWN article on TPM : https://lwn.net/Articles/674751/
+  8, TPM 2 Linux utility author : https://github.com/flihp
+  9, How to use TPM2 tools : https://github.com/tpm2-software/tpm2-tools/wiki/How-to-use-tpm2-tools
+ 10, Encrpyting Disk/HDD/FS : https://wiki.archlinux.org/index.php/Dm-crypt/Device_encryption
+ 11, chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://courses.cs.vt.edu/cs5204/fall10-kafura-BB/Papers/TPM/Intro-TPM-2.pdf
+ 12, https://blog.hansenpartnership.com/using-your-tpm-as-a-secure-key-store/
+ 13, https://www.linuxjournal.com/article/6633
+ 14, chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://lenovopress.com/lp0599.pdf
+ 15, chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/http://events17.linuxfoundation.org/sites/events/files/slides/ELC2017_TPM2-and-TSS_Tricca_0.pdf
 
 
 
@@ -56,3 +67,5 @@ https://blog.hansenpartnership.com/tpm2-and-linux/
 Hardware(CPU) Attacks
   1, https://meltdownattack.com/meltdown.pdf
   2, https://spectreattack.com/spectre.pdf
+  3, https://zombieloadattack.com/
+  4, https://mdsattacks.com/
